@@ -17,6 +17,8 @@ from kivy.properties import ListProperty, StringProperty, \
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.clock import Clock
+from kivy.uix.behaviors import ButtonBehavior
+from kivy.uix.image import Image
 
 
 class MutableTextInput(FloatLayout):
@@ -157,6 +159,12 @@ class NoteApp(App):
     @property
     def notes_fn(self):
         return join(self.user_data_dir, 'notes.json')
+
+class IconButton(ButtonBehavior, Image):
+    pass
+
+        
+    
 
 
 if __name__ == '__main__':
